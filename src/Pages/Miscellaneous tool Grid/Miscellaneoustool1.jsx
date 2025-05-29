@@ -1,5 +1,5 @@
-import arrowIcon from "../../image/arrowIcon.svg";
-import arrowIcon2 from "../../image/arrowIcon2.svg";
+import arrow from "../../image/arrow.svg";
+import arrow2 from "../../image/arrow2.svg";
 import whishlist from "../../image/whishlist.svg";
 import whishlist2 from "../../image/whishlist2.svg";
 import { ImBarcode } from "react-icons/im";
@@ -126,12 +126,12 @@ const Miscellaneoustool1 = () => {
                 <div className="group absolute bottom-5.5 right-1">
                   <div className="relative w-28 h-10 flex items-center justify-center bg-gray-100 rounded-full z-0">
                     <img
-                      src={arrowIcon || "/placeholder.svg"}
+                      src={arrow || "/placeholder.svg"}
                       alt="Arrow"
                       className="absolute inset-0 m-auto transition-opacity duration-300 opacity-100 group-hover:opacity-0"
                     />
                     <img
-                      src={arrowIcon2 || "/placeholder.svg"}
+                      src={arrow2 || "/placeholder.svg"}
                       alt="Arrow"
                       className="absolute inset-0 m-auto transition-opacity duration-500 opacity-0 group-hover:opacity-100"
                     />

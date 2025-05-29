@@ -1,5 +1,5 @@
-import arrowicon from "../../image/arrowicon.svg"; // arrow icon
-import arrowicon2 from "../../image/arrowicon2.svg";
+import arrow from "../../image/arrow.svg"; // arrow icon
+import arrow2 from "../../image/arrow2.svg";
 import whishlist from "../../image/whishlist.svg"; // wishlist icon
 import whishlist2 from "../../image/whishlist2.svg"; // wishlist icon for hover state
 import { FaBookReader } from "react-icons/fa";
@@ -157,12 +157,12 @@ function Texttool1() {
                 <div className="group absolute bottom-5.5 right-1">
                   <div className="relative w-28 h-10 flex items-center justify-center bg-gray-100 rounded-full z-0">
                     <img
-                      src={arrowicon || "/placeholder.svg"}
+                      src={arrow || "/placeholder.svg"}
                       alt="Arrow"
                       className="absolute inset-0 m-auto transition-opacity duration-300 opacity-100 group-hover:opacity-0"
                     />
                     <img
-                      src={arrowicon2 || "/placeholder.svg"}
+                      src={arrow2 || "/placeholder.svg"}
                       alt="Arrow"
                       className="absolute inset-0 m-auto transition-opacity duration-500 opacity-0 group-hover:opacity-100"
                     />
