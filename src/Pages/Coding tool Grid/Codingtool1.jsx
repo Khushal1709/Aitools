@@ -44,7 +44,7 @@ function Codingtools1() {
       filename: '/BaseEncoderDecoder'
     },
     {
-      title: "HTML Encoder/Decoder",
+      title: "HTML Encoder_Decoder",
       description: "Encode or decode your HTML by replacing special characters into equivalent escape forms",
       icon: <TbHtml className='w-[200px] h-[60px] text-indigo-400' />,
       filename: '/HTMLEncoderDecoder'

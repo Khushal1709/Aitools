@@ -14,7 +14,7 @@ import { MdShare } from "react-icons/md";
 import Comment from "../Text tools/Comment";
 import { FavoritesContext } from "../../Context/FavoriteContext";
 
-export default function Base64EncoderDecoder({ id = "Base64 Encoder Decoder Generator" }) {
+export default function Base64EncoderDecoder({ id = "Base64 Encoder/Decoder" }) {
   const { updateFavorites } = useContext(FavoritesContext);
   const [tab, setTab] = useState("encode");
   const [input, setInput] = useState("");

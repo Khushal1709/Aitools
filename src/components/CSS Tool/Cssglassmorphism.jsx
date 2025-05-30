@@ -60,7 +60,7 @@ function hexToRgb(hex) {
   return [r, g, b];
 }
 
-export default function GlassmorphismGenerator({id="CSS Glass Morphism"}) {
+export default function GlassmorphismGenerator({id="CSS Glassmorphism Generator"}) {
   const { updateFavorites } = useContext(FavoritesContext);
   const [glassColor, setGlassColor] = useState(defaultColor);
   const [blur, setBlur] = useState(10);

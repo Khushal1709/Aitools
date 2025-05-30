@@ -17,7 +17,7 @@ import { MdOutlineContentPaste, MdShare } from "react-icons/md";
 import Comment from "../Text tools/Comment";
 import { FavoritesContext } from "../../Context/FavoriteContext";
 
-const CSSTextGlitchEffectGenerator = ({ id = "CSS Text Glitch" }) => {
+const CSSTextGlitchEffectGenerator = ({ id = "CSS Text Glitch Effect Generator" }) => {
   const { updateFavorites } = useContext(FavoritesContext);
   const [glitchEffect, setGlitchEffect] = useState('Glitch with Color');
   const [text, setText] = useState('glitch');

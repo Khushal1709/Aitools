@@ -103,7 +103,7 @@ function Card({ className = '', children, ...props }) {
 
 
 // Main Handwriting Converter component
-export default function HandwritingConverter({id="Text"}) {
+export default function HandwritingConverter({id="Text to Handwriting"}) {
   const { updateFavorites } = useContext(FavoritesContext);
   const [open, setOpen] = useState(false);
   const [bugDescription, setBugDescription] = useState("");

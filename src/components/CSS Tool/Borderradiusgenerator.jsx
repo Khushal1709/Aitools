@@ -17,7 +17,7 @@ import { MdOutlineContentPaste, MdShare } from "react-icons/md";
 import Comment from "../Text tools/Comment";
 import { FavoritesContext } from "../../Context/FavoriteContext";
 
-const BorderRadiusGenerator = ({ id = "Border Radius Generator" }) => {
+const BorderRadiusGenerator = ({ id = "CSS Border Radius Generator" }) => {
   const { updateFavorites } = useContext(FavoritesContext);
   const [corners, setCorners] = useState({
     topLeft: 25,

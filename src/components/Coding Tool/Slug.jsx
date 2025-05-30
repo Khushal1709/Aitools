@@ -1,5 +1,5 @@
 // File: UrlSlugGenerator.jsx
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
 import { FiShare2 } from "react-icons/fi";
 import { FiAlertCircle } from 'react-icons/fi';
 import {
@@ -15,12 +15,15 @@ import {
 import { MdKeyboardArrowDown, MdOutlineContentPaste, MdShare } from "react-icons/md";
 import Comment from "../Text tools/Comment";
 import { FaLink } from "react-icons/fa";
+import { FavoritesContext } from "../../Context/FavoriteContext";
 
 const stopWords = new Set([
   "a", "an", "the", "and", "but", "or", "on", "in", "with", "is", "to", "for", "of", "at", "by"
 ]);
 
-const UrlSlugGenerator = () => {
+const UrlSlugGenerator = ({id="URL Slug Generator"}) => {
+        const { updateFavorites } = useContext(FavoritesContext);
+  
   const [title, setTitle] = useState("");
   const [separator, setSeparator] = useState("_");
     const [isFavorite, setIsFavorite] = useState(false);
@@ -32,7 +35,7 @@ const UrlSlugGenerator = () => {
     removeNumbers: true,
   });
   const [slug, setSlug] = useState("");
-    const onFavoriteToggle = () => setIsFavorite((v) => !v);
+    // const onFavoriteToggle = () => setIsFavorite((v) => !v);
 
   const generateSlug = (text) => {
     let result = text;
@@ -68,6 +71,21 @@ const UrlSlugGenerator = () => {
     const [bugDescription, setBugDescription] = useState("");
     const [shareOpen, setShareOpen] = useState(false);
     const [activeTab, setActiveTab] = useState("tool");
+        const onFavoriteToggle = () => {
+    const favorites = JSON.parse(localStorage.getItem("FavoriteTools") || "[]");
+    let newFavorites;
+
+    if (favorites.includes(id)) {
+      newFavorites = favorites.filter((favId) => favId !== id);
+      setIsFavorite(false);
+    } else {
+      newFavorites = [...favorites, id];
+      setIsFavorite(true);
+    }
+
+    localStorage.setItem("FavoriteTools", JSON.stringify(newFavorites));
+    updateFavorites();
+  };
 
   return (
     <>

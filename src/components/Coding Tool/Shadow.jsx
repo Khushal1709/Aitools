@@ -189,7 +189,7 @@
 
 
 
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
 import { FiAlertCircle } from 'react-icons/fi'; // Add this at the top
 import { FiShare2 } from "react-icons/fi";
 import {
@@ -205,11 +205,15 @@ import {
 import { MdOutlineContentPaste, MdShare } from "react-icons/md";
 import { FaReact } from "react-icons/fa6";
 import Comment from "../Text tools/Comment";
+import { FavoritesContext } from "../../Context/FavoriteContext";
 
-export default function ShadowGenerator() {
+
+export default function ShadowGenerator({id="React Native Shadow Generator"}) {
+        const { updateFavorites } = useContext(FavoritesContext);
+  
   const [shadowColor, setShadowColor] = useState("#ed0c0c");
   const [shadowDepth, setShadowDepth] = useState(13);
-  const onFavoriteToggle = () => setIsFavorite((v) => !v);
+
   const [isFavorite, setIsFavorite] = useState(false);
   const [shareOpen, setShareOpen] = useState(false);
   const [open, setOpen] = useState(false);
@@ -224,6 +228,22 @@ export default function ShadowGenerator() {
     shadowRadius: 10.24,
     elevation: shadowDepth,
   };
+        const onFavoriteToggle = () => {
+    const favorites = JSON.parse(localStorage.getItem("FavoriteTools") || "[]");
+    let newFavorites;
+
+    if (favorites.includes(id)) {
+      newFavorites = favorites.filter((favId) => favId !== id);
+      setIsFavorite(false);
+    } else {
+      newFavorites = [...favorites, id];
+      setIsFavorite(true);
+    }
+
+    localStorage.setItem("FavoriteTools", JSON.stringify(newFavorites));
+    updateFavorites();
+  };
+
 
   return (
     <>

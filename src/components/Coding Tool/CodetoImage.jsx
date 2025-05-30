@@ -127,7 +127,7 @@ const shadowStyles = {
   Hard: "shadow-2xl",
 };
 
-const CodeToImageConverter = ({id="Code to Image Generator"}) => {
+const CodeToImageConverter = ({id="Code to Image Converter"}) => {
      const { updateFavorites } = useContext(FavoritesContext);
     const [open, setOpen] = useState(false);
       const [bugDescription, setBugDescription] = useState("");

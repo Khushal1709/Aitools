@@ -1,7 +1,7 @@
-import arrow from "../../image/arrow.svg"; // arrow icon
+import arrow from "../../image/arrow.svg"; 
 import arrow2 from "../../image/arrow2.svg";
-import whishlist from "../../image/whishlist.svg"; // wishlist icon
-import whishlist2 from "../../image/whishlist2.svg"; // wishlist icon for hover state
+import whishlist from "../../image/whishlist.svg"; 
+import whishlist2 from "../../image/whishlist2.svg"; 
 import { FaBookReader } from "react-icons/fa";
 import { VscCaseSensitive } from "react-icons/vsc";
 import { MdGroups } from "react-icons/md";

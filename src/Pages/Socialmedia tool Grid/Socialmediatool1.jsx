@@ -1,7 +1,7 @@
 import arrow from "../../image/arrow.svg";
 import arrow2 from "../../image/arrow2.svg";
-import whishlist from "../../image/whishlist.svg"; // wishlist icon
-import whishlist2 from "../../image/whishlist2.svg"; // wishlist icon
+import whishlist from "../../image/whishlist.svg"; 
+import whishlist2 from "../../image/whishlist2.svg"; 
 import { MdMovieFilter } from "react-icons/md";
 import { MdPostAdd } from "react-icons/md";
 import { FaTwitterSquare } from "react-icons/fa";

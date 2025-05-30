@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useContext, useState, useRef, useEffect } from "react";
 import { PiFileHtmlBold } from "react-icons/pi";
 import { FiShare2 } from "react-icons/fi";
 import { FiAlertCircle } from 'react-icons/fi';
@@ -14,13 +14,17 @@ import {
 } from "react-icons/fa6";
 import { MdOutlineContentPaste, MdShare } from "react-icons/md";
 import Comment from "../Text tools/Comment";
+import { FavoritesContext } from "../../Context/FavoriteContext";
 
-export default function UrlEncoderDecoder() {
+
+export default function UrlEncoderDecoder({ id = "URL Encoder/Decoder" }) {
+    const { updateFavorites } = useContext(FavoritesContext);
+
   const [tab, setTab] = useState("encode");
   const [input, setInput] = useState("");
   const [output, setOutput] = useState("");
   const [isCopied, setIsCopied] = useState(false);
-  const onFavoriteToggle = () => setIsFavorite(!isFavorite);
+  // const onFavoriteToggle = () => setIsFavorite(!isFavorite);
   const [isFavorite, setIsFavorite] = useState(false);
   const [open, setOpen] = useState(false);
   const [shareOpen, setShareOpen] = useState(false);
@@ -64,7 +68,21 @@ export default function UrlEncoderDecoder() {
       alert("Copy failed. Please try again.");
     }
   };
+    const onFavoriteToggle = () => {
+    const favorites = JSON.parse(localStorage.getItem("FavoriteTools") || "[]");
+    let newFavorites;
 
+    if (favorites.includes(id)) {
+      newFavorites = favorites.filter((favId) => favId !== id);
+      setIsFavorite(false);
+    } else {
+      newFavorites = [...favorites, id];
+      setIsFavorite(true);
+    }
+
+    localStorage.setItem("FavoriteTools", JSON.stringify(newFavorites));
+    updateFavorites();
+  };
   return (
     <>
     <div className="max-w-4xl mx-auto mt-8">

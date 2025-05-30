@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useContext} from "react";
 import { js as beautifyJs } from "js-beautify";
 import {
   FaCheck,
@@ -14,9 +14,13 @@ import { FiAlertCircle } from 'react-icons/fi';
 import { FiShare2 } from "react-icons/fi";
 import { PiFileJsxBold } from "react-icons/pi";
 import Comment from "../Text tools/Comment";
+import { FavoritesContext } from "../../Context/FavoriteContext";
+
 // ... other imports as needed
 
-export default function JsFormatter() {
+export default function JsFormatter({id="JavaScript Formatter"}) {
+    const { updateFavorites } = useContext(FavoritesContext);
+  
   const [input, setInput] = useState("");
   const [output, setOutput] = useState("");
   const [indent, setIndent] = useState("2");
@@ -113,8 +117,22 @@ export default function JsFormatter() {
   const [bugDescription, setBugDescription] = useState("");
   const [open, setOpen] = useState(false);
 
-  const onFavoriteToggle = () => setIsFavorite((v) => !v);
+  // const onFavoriteToggle = () => setIsFavorite((v) => !v);
+    const onFavoriteToggle = () => {
+    const favorites = JSON.parse(localStorage.getItem("FavoriteTools") || "[]");
+    let newFavorites;
 
+    if (favorites.includes(id)) {
+      newFavorites = favorites.filter((favId) => favId !== id);
+      setIsFavorite(false);
+    } else {
+      newFavorites = [...favorites, id];
+      setIsFavorite(true);
+    }
+
+    localStorage.setItem("FavoriteTools", JSON.stringify(newFavorites));
+    updateFavorites();
+  };
   return (
     <>
     <div className="max-w-4xl mx-auto mt-8">
