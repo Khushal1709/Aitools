@@ -19,7 +19,7 @@ function Miscellaneoustool() {
         />
       </div>
       <div
-        className="absolute inset-0 w-140 left-280 top-[-50px] hidden lg:block md:left-150 lg:left-115 xl:left-230 2xl:left-280 "
+        className="absolute inset-0 w-140 left-280 top-[-50px] hidden lg:block md:left-150 lg:left-115 xl:left-230 2xl:left-[63%] "
         style={{ zIndex: -1 }}
       >
         <img
